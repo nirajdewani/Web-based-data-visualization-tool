@@ -1,0 +1,32 @@
+<!doctype html>
+<h3>Data visualization: CSV to k-means</h3>
+<hr>
+<title>Data visualization</title>
+<body>
+	
+<center>
+<h4>Select two columns to perform k-means clustering</h4>
+	
+<form name="selectionForm" action = "index" method='POST'>
+	<select name = "column1">
+	{% for i in range(0, columnList|count) %}
+			<option value="{{i}}">{{columnList[i]}}</option>
+	{% endfor %}
+	</select>
+
+	<select name = "column2">
+	{% for i in range(0, columnList|count) %}
+			<option value="{{i}}">{{columnList[i]}}</option>
+	{% endfor %}
+	</select>
+	<br><br>
+	
+	<label for="count"> Cluster count (k):</label>
+	<input type="text" name = "count"/>
+	<br><br>
+	
+	<button type = "submit">Submit</button>
+</form>
+	
+</center>
+</body>
